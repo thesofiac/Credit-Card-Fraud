@@ -31,7 +31,7 @@ def treat_columns(df_train):
 
 # Carregar modelo e dados
 pipeline = joblib.load('final_model.pkl')
-df_train = pd.read_csv('creditcard.csv')
+df_train = pd.read_parquet('creditcard.parquet')
 
 # Processar
 features, labels, enrollee_ids = treat_columns(df_train)

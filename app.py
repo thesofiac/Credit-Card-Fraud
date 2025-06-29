@@ -159,8 +159,6 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     # Estabelecimento
     f21 = st.selectbox("Tipo de Estabelecimento", estab_options)
-
-    st.write(f"A probabilidade da transação ser fraudulenta é: {dt_dias:.0f}%")
     
     # Variáveis finais
     final0 = 0

@@ -96,7 +96,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     st.subheader("Preveja se uma transação é fraudulenta")
 
     # Transação
-    f1 = st.number_input("Valor da Transação", min_value=0, value=0.0)
+    f1 = st.number_input("Valor da Transação", min_value=0.0, value=0.0)
     f2 = st.date_input("Data da Transação", value=date.today())
     dt_dias = int((date.today() - f2).days)
 
@@ -122,7 +122,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     f7 = st.selectbox("Canal de compra", chanel_options)
 
     # Transação Anterior
-    f8 = st.number_input("Valor da Última Transação", min_value=0, value=0.0)
+    f8 = st.number_input("Valor da Última Transação", min_value=0.0, value=0.0)
     f9 = st.date_input("Data da última Transação", value=date.today())
     dt_dias1 = int((date.today() - f9).days)
 
@@ -149,7 +149,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     # Cliente
     f15 = st.number_input("Frequência de Transação (média de transações no dia da semana)", min_value=0, step=1, value=0)
-    f16 = st.number_input("Média de Gasto do Usuário (por transação)", min_value=0, value=0.0)
+    f16 = st.number_input("Média de Gasto do Usuário (por transação)", min_value=0.0, value=0.0)
 
     cep = str(st.text_area("CEP do cliente (somente números)", value="00000000"))
     cep_limpo = re.sub(r"\D", "", cep)

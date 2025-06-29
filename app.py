@@ -205,7 +205,7 @@ elif menu == "Busque transações por ID":
     id_input = st.text_input("Digite o ID da transação")
 
     if st.button("Buscar"):
-        filt = df_original[df_original['ID'] == int(id_input)]
+        filt = df_original[df_original['id'] == int(id_input)]
         if not filt.empty:
             valor = filt.iloc[0]['Fraude']
             st.write(f"A transação de ID {id_input} é: {valor}")

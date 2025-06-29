@@ -96,14 +96,14 @@ elif menu == "Preveja se uma transação é fraudulenta":
     st.subheader("Preveja se uma transação é fraudulenta")
 
     # Transação
-    f1 = st.number_input("Valor da Transação", value=0.0)
+    f1 = st.number_input("Valor da Transação", min_value=0, value=0.0)
     f2 = st.date_input("Data da Transação", value=date.today())
     dt_dias = int((date.today() - f2).days)
 
     f3 = st.time_input("Horário da Transação", value=time(8, 30))
     segundos = f3.hour * 3600 + f3.minute * 60
     
-    cep1 = st.number_input("CEP da transação (somente números)", min_value=0, step=1, value=99999999)
+    cep1 = str(st.number_input("CEP da transação (somente números)", min_value=0, step=1, value=99999999))
     cep1_limpo = re.sub(r"\D", "", cep1)
 
     if len(cep1_limpo) == 8:
@@ -122,14 +122,14 @@ elif menu == "Preveja se uma transação é fraudulenta":
     f7 = st.selectbox("Canal de compra", chanel_options)
 
     # Transação Anterior
-    f8 = st.number_input("Valor da Última Transação", min_value=0)
+    f8 = st.number_input("Valor da Última Transação", min_value=0, value=0.0)
     f9 = st.date_input("Data da última Transação", value=date.today())
     dt_dias1 = int((date.today() - f9).days)
 
     f10 = st.time_input("Horário da última Transação", value=time(8, 30))
     segundos1 = f10.hour * 3600 + f10.minute * 60
     
-    cep2 = st.text_area("CEP da última transação (somente números)", value="00000000")
+    cep2 = str(st.text_area("CEP da última transação (somente números)", value="00000000"))
     cep2_limpo = re.sub(r"\D", "", cep2)
 
     if len(cep2_limpo) == 8:
@@ -149,9 +149,9 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     # Cliente
     f15 = st.number_input("Frequência de Transação (média de transações no dia da semana)", min_value=0, step=1, value=0)
-    f16 = st.number_input("Média de Gasto do Usuário (por transação)", value=0.0)
+    f16 = st.number_input("Média de Gasto do Usuário (por transação)", min_value=0, value=0.0)
 
-    cep = st.text_area("CEP do cliente (somente números)", value="00000000")
+    cep = str(st.text_area("CEP do cliente (somente números)", value="00000000"))
     cep_limpo = re.sub(r"\D", "", cep)
 
     if len(cep_limpo) == 8:

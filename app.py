@@ -123,7 +123,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     f9 = st.date_input("Data da última Transação", value=date.today())
     dt_dias1 = (hoje - f9).days
 
-    f10 = st.time_input("Horário da Transação", value=time(8, 30))
+    f10 = st.time_input("Horário da última Transação", value=time(8, 30))
 
     cep2 = st.text_area("CEP da última transação (somente números)", value="00000000")
     cep2_limpo = re.sub(r"\D", "", cep2)

@@ -94,12 +94,10 @@ if menu == "Entenda os dados":
 elif menu == "Preveja se uma transação é fraudulenta":
     st.subheader("Preveja se uma transação é fraudulenta")
 
-    hoje = date.today()
-
     # Transação
     f1 = st.number_input("Valor da Transação", value=0.0)
     f2 = st.date_input("Data da Transação", value=date.today())
-    dt_dias = (date.today() - f2).days
+    dt_dias = int((date.today() - f2).days)
 
     f3 = st.time_input("Horário da Transação", value=time(8, 30))
 
@@ -121,7 +119,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     # Transação Anterior
     f8 = st.number_input("Valor da Última Transação", value=0.0)
     f9 = st.date_input("Data da última Transação", value=date.today())
-    dt_dias1 = (hoje - f9).days
+    dt_dias1 = int((date.today() - f9).days)
 
     f10 = st.time_input("Horário da última Transação", value=time(8, 30))
 

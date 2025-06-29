@@ -6,6 +6,7 @@ import random
 import streamlit as st
 from datetime import time, date
 from xgboost import XGBClassifier
+from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import RandomOverSampler
 from geopy.geocoders import Nominatim
 

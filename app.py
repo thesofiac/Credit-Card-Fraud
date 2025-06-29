@@ -110,9 +110,8 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     location1 = geolocator.geocode({"postalcode": cep1_formatado, "country": "Brazil"})
 
-    if location1:
-        f4 = location1.latitude
-        f5 = location1.longitude
+    f4 = location1.latitude
+    f5 = location1.longitude
 
     f6 = st.number_input("IP do dispositivo (somente números)", value=0.0)
     f7 = st.selectbox("Canal de compra", chanel_options)

@@ -109,10 +109,14 @@ elif menu == "Preveja se uma transação é fraudulenta":
         cep1_formatado = f"{cep1_limpo[:5]}-{cep1_limpo[5:]}"
 
     location1 = geolocator.geocode({"postalcode": cep1_formatado, "country": "Brazil"})
-
-    f4 = location1.latitude
-    f5 = location1.longitude
-
+    
+    if location1 is not None:
+        f4 = location1.latitude
+        f5 = location1.longitude
+    else:
+        f4 = 0
+        f5 = 0
+        
     f6 = st.number_input("IP do dispositivo (somente números)", value=0.0)
     f7 = st.selectbox("Canal de compra", chanel_options)
 
@@ -132,9 +136,12 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     location2 = geolocator.geocode({"postalcode": cep2_formatado, "country": "Brazil"})
 
-    if location1:
+    if location2 is not None:
         f11 = location2.latitude
         f12 = location2.longitude
+    else:
+        f11 = 0
+        f12 = 0
 
     f13 = st.number_input("IP da última transação", value=0.0)
     f14 = st.selectbox("Canal da última compra", chanel_options)
@@ -151,9 +158,12 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     location = geolocator.geocode({"postalcode": cep_formatado, "country": "Brazil"})
 
-    if location:
+    if location is not None:
         f17 = location.latitude
         f18 = location.longitude
+    else:
+        f17 = 0
+        f18 = 0
 
     f19 = st.selectbox("Canal mais frequente de compra", chanel_options)
     f20 = st.number_input("IP mais frequente de compra", value=0.0)

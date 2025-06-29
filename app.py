@@ -103,7 +103,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     f3 = st.time_input("Horário da Transação", value=time(8, 30))
     segundos = f3.hour * 3600 + f3.minute * 60
     
-    cep1 = st.text_area("CEP da transação (somente números)", value="00000000")
+    cep1 = st.number_input("CEP da transação (somente números)", min_value=0, step=1, value=99999999)
     cep1_limpo = re.sub(r"\D", "", cep1)
 
     if len(cep1_limpo) == 8:
@@ -118,11 +118,11 @@ elif menu == "Preveja se uma transação é fraudulenta":
         f4 = 0
         f5 = 0
         
-    f6 = st.number_input("IP do dispositivo (somente números)", value=0.0)
+    f6 = st.number_input("IP do dispositivo (somente números)", min_value=0, step=1, value=999999999)
     f7 = st.selectbox("Canal de compra", chanel_options)
 
     # Transação Anterior
-    f8 = st.number_input("Valor da Última Transação", value=0.0)
+    f8 = st.number_input("Valor da Última Transação", min_value=0)
     f9 = st.date_input("Data da última Transação", value=date.today())
     dt_dias1 = int((date.today() - f9).days)
 
@@ -144,11 +144,11 @@ elif menu == "Preveja se uma transação é fraudulenta":
         f11 = 0
         f12 = 0
 
-    f13 = st.number_input("IP da última transação", value=0.0)
+    f13 = st.number_input("IP da última transação", min_value=0, step=1, value=999999999)
     f14 = st.selectbox("Canal da última compra", chanel_options)
 
     # Cliente
-    f15 = st.number_input("Frequência de Transação (média de transações no dia da semana)", value=0.0)
+    f15 = st.number_input("Frequência de Transação (média de transações no dia da semana)", min_value=0, step=1, value=0)
     f16 = st.number_input("Média de Gasto do Usuário (por transação)", value=0.0)
 
     cep = st.text_area("CEP do cliente (somente números)", value="00000000")
@@ -167,12 +167,10 @@ elif menu == "Preveja se uma transação é fraudulenta":
         f18 = 0
 
     f19 = st.selectbox("Canal mais frequente de compra", chanel_options)
-    f20 = st.number_input("IP mais frequente de compra", value=0.0)
+    f20 = st.number_input("IP mais frequente de compra", min_value=0, step=1, value=999999999)
 
     # Estabelecimento
     f21 = st.selectbox("Tipo de Estabelecimento", estab_options)
-
-    st.write(f"A probabilidade da transação ser fraudulenta é: {cep1_formatado}%")
     
     # Variáveis finais
     final0 = 0

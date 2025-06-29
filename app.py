@@ -4,7 +4,7 @@ import numpy as np
 import random
 import streamlit as st
 from datetime import time, date
-import imblearn
+from imblearn.over_sampling import RandomOverSampler
 from geopy.geocoders import Nominatim
 
 def escale(x_input, min_scaled, max_scaled, min_original, max_original):

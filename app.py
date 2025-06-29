@@ -99,7 +99,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     # Transação
     f1 = st.number_input("Valor da Transação", value=0.0)
     f2 = st.date_input("Data da Transação", value=date.today())
-    dt_dias = (hoje - f2).days
+    dt_dias = (date.today() - f2).days
 
     f3 = st.time_input("Horário da Transação", value=time(8, 30))
 
@@ -162,6 +162,8 @@ elif menu == "Preveja se uma transação é fraudulenta":
     # Estabelecimento
     f21 = st.selectbox("Tipo de Estabelecimento", estab_options)
 
+    st.write(f"A probabilidade da transação ser fraudulenta é: {dt_dias:.0f}%")
+    
     # Variáveis finais
     final0 = 0
     final1 = f1

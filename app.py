@@ -125,7 +125,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     f10 = st.time_input("Horário da Transação", value=time(8, 30))
 
-    cep2 = st.text_area("CEP da última transação (somente números)")
+    cep2 = st.text_area("CEP da última transação (somente números)", value="00000000")
     cep2_limpo = re.sub(r"\D", "", cep2)
 
     if len(cep2_limpo) == 8:
@@ -144,7 +144,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     f15 = st.number_input("Frequência de Transação (média de transações no dia da semana)", value=0.0)
     f16 = st.number_input("Média de Gasto do Usuário (por transação)", value=0.0)
 
-    cep = st.text_area("CEP do cliente (somente números)")
+    cep = st.text_area("CEP do cliente (somente números)", value="00000000")
     cep_limpo = re.sub(r"\D", "", cep)
 
     if len(cep_limpo) == 8:

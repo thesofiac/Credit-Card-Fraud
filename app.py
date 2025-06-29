@@ -103,7 +103,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
 
     f3 = st.time_input("Horário da Transação", value=time(8, 30))
 
-    cep1 = st.text_area("CEP da transação (somente números)")
+    cep1 = st.text_area("CEP da transação (somente números)", value="00000000")
     cep1_limpo = re.sub(r"\D", "", cep1)
 
     if len(cep1_limpo) == 8:

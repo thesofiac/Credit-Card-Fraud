@@ -98,7 +98,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     # Transação
     f1 = st.number_input("Valor da Transação", value=0.0)
     f2 = st.date_input("Data da Transação", value=date.today())
-    #dt_dias = int((date.today() - f2).days)
+    dt_dias = int((date.today() - f2).days)
 
     f3 = st.time_input("Horário da Transação", value=time(8, 30))
     segundos = f3.hour * 3600 + f3.minute * 60
@@ -124,7 +124,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     # Transação Anterior
     f8 = st.number_input("Valor da Última Transação", value=0.0)
     f9 = st.date_input("Data da última Transação", value=date.today())
-    #dt_dias1 = int((date.today() - f9).days)
+    dt_dias1 = int((date.today() - f9).days)
 
     f10 = st.time_input("Horário da última Transação", value=time(8, 30))
     segundos1 = f10.hour * 3600 + f10.minute * 60
@@ -177,14 +177,14 @@ elif menu == "Preveja se uma transação é fraudulenta":
     # Variáveis finais
     final0 = 0
     final1 = f1
-    final2 = escale(27, -56.4, 2.5, 0, 30)
+    final2 = escale(dt_dias, -56.4, 2.5, 0, 30)
     final3 = escale(segundos, -72.7, 22.1, 0, 86400)
     final4 = escale(f4, -48, 9.4, -90, 90)
     final5 = escale(f5, -5.7, 16.9, -180, 180)
     final6 = escale(f6, -113.7, 34.8, 0, 999999999999)
     final7 = int(dict_chanels[f7])
     final8 = escale(f8, -43.6, 120.6, 0, 10000)
-    final9 = escale(27, -73.2, 20, 0, 30)
+    final9 = escale(dt_dias1, -73.2, 20, 0, 30)
     final10 = escale(segundos1, -13.4, 15.6, 0, 86400)
     final11 = escale(f11, -24.6, 23.7, -90, 90)
     final12 = escale(f12, -4.8, 12, -180, 180)

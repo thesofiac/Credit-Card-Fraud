@@ -100,7 +100,8 @@ elif menu == "Preveja se uma transação é fraudulenta":
     #dt_dias = int((date.today() - f2).days)
 
     f3 = st.time_input("Horário da Transação", value=time(8, 30))
-
+    segundos = f3.hour * 3600 + f3.minute * 60
+    
     cep1 = st.text_area("CEP da transação (somente números)", value="00000000")
     cep1_limpo = re.sub(r"\D", "", cep1)
 
@@ -122,7 +123,8 @@ elif menu == "Preveja se uma transação é fraudulenta":
     #dt_dias1 = int((date.today() - f9).days)
 
     f10 = st.time_input("Horário da última Transação", value=time(8, 30))
-
+    segundos1 = f10.hour * 3600 + f10.minute * 60
+    
     cep2 = st.text_area("CEP da última transação (somente números)", value="00000000")
     cep2_limpo = re.sub(r"\D", "", cep2)
 
@@ -164,14 +166,14 @@ elif menu == "Preveja se uma transação é fraudulenta":
     final0 = 0
     final1 = f1
     final2 = escale(27, -56.4, 2.5, 0, 30)
-    final3 = escale(f3, -72.7, 22.1, 0, 86400)
+    final3 = escale(segundos, -72.7, 22.1, 0, 86400)
     final4 = escale(f4, -48, 9.4, -90, 90)
     final5 = escale(f5, -5.7, 16.9, -180, 180)
     final6 = escale(f6, -113.7, 34.8, 0, 999999999999)
     final7 = int(dict_chanels[f7])
     final8 = escale(f8, -43.6, 120.6, 0, 10000)
     final9 = escale(27, -73.2, 20, 0, 30)
-    final10 = escale(f10, -13.4, 15.6, 0, 86400)
+    final10 = escale(segundos1, -13.4, 15.6, 0, 86400)
     final11 = escale(f11, -24.6, 23.7, -90, 90)
     final12 = escale(f12, -4.8, 12, -180, 180)
     final13 = escale(f13, -18.7, 7.8, 0, 999999999999)

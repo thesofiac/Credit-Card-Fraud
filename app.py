@@ -195,7 +195,7 @@ elif menu == "Preveja se uma transação é fraudulenta":
     final18 = escale(f18, -25.2, 9.3, -180, 180)
     final19 = int(dict_chanels[f19])
     final20 = escale(f20, -7.2, 5.6, 0, 999999999999)
-    final21 = int(dict_chanels[f21])
+    final21 = int(dict_estab[f21])
     final22 = random.uniform(-1.2, 3.4)
     final23 = random.uniform(-1.2, 3.4)
     final24 = random.uniform(-1.2, 3.4)
